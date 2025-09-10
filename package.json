@@ -1,5 +1,6 @@
 {
   "name": "excel-merge-tool",
+  "homepage": "https://j811108.github.io/excel-merge-tool",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +16,6 @@
     "xlsx": "^0.18.5",
     "xlsx-style": "^0.8.13"
   },
-  "homepage": "https://j811108.github.io/excel-merge-tool",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

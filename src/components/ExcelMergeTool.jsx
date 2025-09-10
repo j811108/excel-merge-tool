@@ -243,7 +243,7 @@ const ExcelMergeTool = () => {
           const sizeName = row[15]; // P欄 - 尺寸名稱
           const year = row[13]; // N欄 - 年度
           const price = row[12]; // M欄 - 含稅定價
-          const inventory = parseInt(row[10]) || 0; // K欄 - 合計庫存量
+          const inventory = parseInt(row[11]) || 0; // L欄 - 可售量
           
           if (productCode) {
             const key = `${productCode}`;
@@ -348,7 +348,7 @@ const ExcelMergeTool = () => {
 
     // === 新增欄寬設定 ===
     summaryWS['!cols'] = [
-      { wch: 15 }, // 商品代號
+      { wch: 17 }, // 商品代號
       { wch: 25 }, // 商品名稱
       { wch: 15 }, // 尺寸名稱
       { wch: 10 }, // 年度
@@ -453,7 +453,7 @@ const ExcelMergeTool = () => {
                     <div>P/尺寸名稱 → 模板尺寸名稱欄</div>
                     <div>N/年度 → 模板年度欄</div>
                     <div>M/含稅定價 → 模板含稅定價欄</div>
-                    <div>K/庫存量 → 模板總倉/官網/平台欄</div>
+                    <div>L/可售量 → 模板總倉/官網/平台欄</div>
                   </div>
                 </div>
               </div>
@@ -567,7 +567,7 @@ const ExcelMergeTool = () => {
                       <tr className="bg-gray-100">
                         <th className="border px-2 py-1">A-商品代號</th>
                         <th className="border px-2 py-1">B-商品名稱</th>
-                        <th className="border px-2 py-1">K-庫存量</th>
+                        <th className="border px-2 py-1">L-可售量</th>
                         <th className="border px-2 py-1">M-含稅定價</th>
                         <th className="border px-2 py-1">N-年度</th>
                         <th className="border px-2 py-1">P-尺寸名稱</th>
