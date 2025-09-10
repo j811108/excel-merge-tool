@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/excel-merge-tool/static/css/main.76c4277c.css",
+    "main.js": "/excel-merge-tool/static/js/main.b5fa4ff4.js",
+    "static/js/453.57fd7cf5.chunk.js": "/excel-merge-tool/static/js/453.57fd7cf5.chunk.js",
+    "index.html": "/excel-merge-tool/index.html",
+    "main.76c4277c.css.map": "/excel-merge-tool/static/css/main.76c4277c.css.map",
+    "main.b5fa4ff4.js.map": "/excel-merge-tool/static/js/main.b5fa4ff4.js.map",
+    "453.57fd7cf5.chunk.js.map": "/excel-merge-tool/static/js/453.57fd7cf5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76c4277c.css",
+    "static/js/main.b5fa4ff4.js"
+  ]
+}
