@@ -244,6 +244,7 @@ const ExcelMergeTool = () => {
           const year = row[13]; // N欄 - 年度
           const price = row[12]; // M欄 - 含稅定價
           const inventory = parseInt(row[11]) || 0; // L欄 - 可售量
+          const seasonName = row[16]; // Q欄 - 季節名稱
           
           if (productCode) {
             const key = `${productCode}`;
@@ -252,6 +253,7 @@ const ExcelMergeTool = () => {
                 productCode,
                 productName,
                 sizeName,
+                seasonName,
                 year,
                 price,
                 總倉: 0,
@@ -302,6 +304,9 @@ const ExcelMergeTool = () => {
           if (columnMapping.platform) {
             newRow[columnMapping.platform.index] = inventory.平台;
           }
+          if (columnMapping.seasonName) {
+            newRow[columnMapping.seasonName.index] = inventory.seasonName || newRow[columnMapping.seasonName.index];
+          }
         }
         
         return newRow;
@@ -336,7 +341,8 @@ const ExcelMergeTool = () => {
     const summaryData = processedData.summary.map(item => ({
       商品代號: item.productCode,
       商品名稱: item.productName,
-      尺寸名稱: item.sizeName,
+      尺寸名稱: item.sizeName || '',
+      季節名稱: item.seasonName || '',
       年度: item.year,
       總倉: item.總倉,
       官網: item.官網,
@@ -351,12 +357,13 @@ const ExcelMergeTool = () => {
       { wch: 17 }, // 商品代號
       { wch: 25 }, // 商品名稱
       { wch: 15 }, // 尺寸名稱
+      { wch: 12 },  // 季節名稱
       { wch: 10 }, // 年度
       { wch: 10 }, // 總倉
       { wch: 10 }, // 官網
       { wch: 10 }, // 平台
       { wch: 12 }, // 含稅定價
-      { wch: 20 }  // 備註
+      { wch: 20 } // 備註
     ];
 
     // === 設定標題列樣式 === <sheetJS不支援樣式設定>
